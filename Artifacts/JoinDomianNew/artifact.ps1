@@ -11,6 +11,7 @@ param
     [string] $DomainToJoin,
 
     [Parameter(Mandatory = $false)]
+    [AllowEmptyString()]
     [string] $OUPath
 )
 
@@ -32,7 +33,8 @@ function Add-VmToDomain ()
         [Parameter(Mandatory = $true)] 
         [securestring] $JoinPassword, 
         
-        [Parameter(Mandatory = $false)] 
+        [Parameter(Mandatory = $false)]
+	[AllowEmptyString()]
         [string] $OU
     )
 
