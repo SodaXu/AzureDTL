@@ -33,8 +33,7 @@
     }
   },
   "runCommand": {
-    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./artifact-main.ps1', ' -domainAdminUsername ', parameters('domainAdminUsername'), ' -domainAdminPassword ', parameters('domainAdminPassword'), ' -domainToJoin ', parameters('domainToJoin'), ' -ouPath ', '\\\"', parameters('ouPath'), '\\\"', '\"')]",
-    "TimeStamp":"636366023890510603"
+    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./artifact-main.ps1', ' -domainAdminUsername ', parameters('domainAdminUsername'), ' -domainAdminPassword ', parameters('domainAdminPassword'), ' -domainToJoin ', parameters('domainToJoin'), ' -ouPath ', '\\\"', parameters('ouPath'), '\\\"', '\"')]"
   },
   "postDeployActions": [
     {
