@@ -47,7 +47,6 @@ function Add-VmToDomain ()
         $credential = New-Object System.Management.Automation.PSCredential($JoinUser, $JoinPassword)
 		if($OU)
 		{
-			"10.0.0.4 CPPATV2.DTL" | Out-File -FilePath "$env:windir\System32\drivers\etc\hosts" -Append -encoding ascii -Force
 			[Microsoft.PowerShell.Commands.ComputerChangeInfo]$computerChangeInfo = Add-Computer -ComputerName $VmName -DomainName $DomainName -Credential $credential -OUPath $OU -Force -PassThru
 			if ($computerChangeInfo.HasSucceeded)
 			{
@@ -60,7 +59,6 @@ function Add-VmToDomain ()
 		}
 		else
 		{
-			"10.0.0.4 CPPATV2.DTL" | Out-File -FilePath "$env:windir\System32\drivers\etc\hosts" -Append -encoding ascii -Force
 			[Microsoft.PowerShell.Commands.ComputerChangeInfo]$computerChangeInfo= Add-Computer -ComputerName $VmName -DomainName $DomainName -Credential $credential -Force -PassThru
 			if ($computerChangeInfo.HasSucceeded)
 			{
